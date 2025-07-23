@@ -60,24 +60,6 @@ fs.readFile('README.md', 'utf8', (err, data) => {
 - 类似Go的第三方模块，可以直接使用
 - 避免重复造轮子
 
-```mermaid
-graph LR
-    A[你的项目] --> B[package.json]
-    B --> C[依赖列表]
-    C --> D[vue: ^3.0.0]
-    C --> E[vite: ^4.0.0] 
-    C --> F[colors: ^1.4.0]
-    
-    G[npm install] --> H[下载依赖]
-    H --> I[node_modules/]
-    I --> J[vue包]
-    I --> K[vite包]
-    I --> L[colors包]
-    
-    style B fill:#fff3e0
-    style I fill:#e8f5e8
-```
-
 ### 5.2 类比Go语言
 | Go | Node.js | 说明 |
 |---|---|---|
@@ -85,29 +67,6 @@ graph LR
 | `go.sum` | `package-lock.json` | 依赖版本锁定 |
 | `go mod tidy` | `npm install` | 下载依赖 |
 | `$GOPATH/pkg/mod` | `node_modules/` | 依赖存储目录 |
-
-```mermaid
-graph TB
-    subgraph "Go项目"
-        A1[go.mod] --> A2[go mod tidy]
-        A2 --> A3[$GOPATH/pkg/mod/]
-        A3 --> A4[运行: go run main.go]
-    end
-    
-    subgraph "Node.js项目"
-        B1[package.json] --> B2[npm install]
-        B2 --> B3[node_modules/]
-        B3 --> B4[运行: node main.js]
-    end
-    
-    A1 -.-> B1
-    A2 -.-> B2
-    A3 -.-> B3
-    A4 -.-> B4
-    
-    style A1 fill:#e3f2fd
-    style B1 fill:#fff3e0
-```
 
 ### 5.3 package.json 文件解释
 ```json
