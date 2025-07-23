@@ -1,46 +1,5 @@
 # Node.js 基础教程
 
-```mermaid
-graph TD
-    A[JavaScript代码] --> B{运行环境}
-    B --> C[浏览器环境]
-    B --> D[Node.js环境]
-    
-    C --> E[操作DOM]
-    C --> F[处理用户事件]
-    C --> G[浏览器API]
-    
-    D --> H[文件系统操作]
-    D --> I[网络请求]
-    D --> J[系统API]
-    
-    style C fill:#e1f5fe
-    style D fill:#f3e5f5
-```
-
-### 类比理解（基于你的Go背景）
-```
-Go程序:        go run main.go
-Node.js程序:   node main.js
-```
-
-### 为什么需要Node.js？
-- **前端工程化**: 现代前端需要编译、打包、热更新等功能
-- **工具链**: ESLint、Prettier、Vite等开发工具都是Node.js程序
-- **包管理**: 通过npm安装和使用别人写好的代码库
-
-## 2. 检查你的环境
-
-你已经安装了：
-- Node.js: v24.4.1 （很新的版本）
-- npm: v11.4.2 （最新版本）
-
-验证命令：
-```bash
-node --version    # 显示Node.js版本
-npm --version     # 显示npm版本
-```
-
 ## 3. Node.js vs 浏览器JavaScript
 
 ### 浏览器中的JavaScript
