@@ -19,6 +19,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - 深入理解Promise异步编程原理 (`promise-tutorial.md`)
   - 掌握async/await现代异步语法 (`async-await-tutorial.md`)
   - 理解JavaScript模块化机制 (`js-modules-tutorial.md`)
+  - JavaScript number类型详解完成 (`js-number-demo.js`)
   - 从传统脚本开发转向现代工程化开发思维
 
 - **前端工程化理解**: 概念转换完成
@@ -76,15 +77,13 @@ npm run preview      # 预览构建结果
 ## 当前项目状态
 - **环境已配置**: Node.js v24.4.1, npm v11.4.2
 - **项目已初始化**: 已创建package.json，安装了colors包作为演示
-- **学习资料完整**: 
-  - `01-nodejs-tutorial.md` - Node.js基础教程（包含Mermaid图表）
-  - `node-basics.js` - Node.js基础概念演示代码
-  - `npm-demo.js` - npm包管理演示代码
-  - `practice.js` - ES6+语法练习文件
-  - `promise-tutorial.md` - Promise异步编程详解（含Go语言对比）
-  - `async-await-tutorial.md` - async/await现代语法教程（含使用场景分析）
-  - `js-modules-tutorial.md` - JavaScript模块化完整教程（含实际项目示例）
-  - `read-from-book.md` - 书本学习笔记（含Node.js异步I/O原理深度解析）
+- **学习资料已迁移**: 
+  - JavaScript相关教程文档已迁移到个人博客 (`~/workspace/markdown/前端/js/`)
+  - 保留在项目中的实践代码:
+    - `node-basics.js` - Node.js基础概念演示代码
+    - `npm-demo.js` - npm包管理演示代码
+    - `practice.js` - ES6+语法练习文件
+    - `hello.js` - 基础测试文件
 
 ## VSCode配置状态
 - 用户已下载Mermaid插件的VSIX文件，需要通过命令面板安装
