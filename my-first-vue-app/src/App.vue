@@ -2,13 +2,10 @@
   <div class="app">
     <h1>{{ title }}</h1>
     <p>{{ message }}</p>
-    
     <!-- 事件绑定 - 类似jQuery的click事件 -->
     <button @click="changeMessage">点击改变消息</button>
-    
     <!-- 条件渲染 - 根据数据显示/隐藏 -->
-    <p v-if="showTip">提示：这是Vue 3的响应式数据！</p>
-
+    <p v-if="showTip">提示 这是Vue 3的响应式数据 </p>
     <!-- 使用自定义组件 - 就像使用HTML标签一样 -->
     <Counter title="我的第一个组件" :initial-value="5" />
     <!-- 使用多个相同组件 - 组件复用 -->
@@ -34,13 +31,11 @@ const changeMessage = () => {
 </script>
 
 <style>
-/* 这里是CSS样式 - 完全和之前一样 */
 .app {
   text-align: center;
   margin-top: 50px;
   font-family: Arial, sans-serif;
 }
-
 button {
   background-color: #42b883;
   color: white;
@@ -51,11 +46,9 @@ button {
   font-size: 16px;
   margin: 10px;
 }
-
 button:hover {
   background-color: #369870;
 }
-
 h1 {
   color: #42b883;
 }
