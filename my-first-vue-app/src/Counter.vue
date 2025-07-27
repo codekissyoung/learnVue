@@ -18,22 +18,16 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-// 定义组件的属性 - 父组件传递过来的数据
 const props = defineProps({
   title: {
-    type: String,
-    default: '计数器组件'
+    type: String
   },
   initialValue: {
-    type: Number,
-    default: 0
+    type: Number
   }
 })
 
-// 响应式数据 - 计数值
 const count = ref(props.initialValue)
-
-// 计算属性 - 根据count自动计算状态
 const status = computed(() => {
   if (count.value > 10) return '很大了！'
   if (count.value < 0) return '负数了！'
@@ -41,7 +35,6 @@ const status = computed(() => {
   return '正常计数中'
 })
 
-// 方法定义 - 组件的行为
 const increase = () => {
   count.value++
 }
