@@ -1,5 +1,4 @@
 <template>
-  <!-- 组件的HTML结构 -->
   <div class="counter">
     <h3>{{ title }}</h3>
     <div class="counter-display">
@@ -17,7 +16,6 @@
 </template>
 
 <script setup>
-// 导入Vue的响应式函数
 import { ref, computed } from 'vue'
 
 // 定义组件的属性 - 父组件传递过来的数据
@@ -47,18 +45,12 @@ const status = computed(() => {
 const increase = () => {
   count.value++
 }
-
 const decrease = () => {
   count.value--
 }
-
 const reset = () => {
   count.value = props.initialValue
 }
-
-// 对比传统方式：
-// jQuery: $('#count').text(newValue) - 手动更新DOM
-// Vue 3: count.value = newValue - 自动更新DOM
 </script>
 
 <style scoped>

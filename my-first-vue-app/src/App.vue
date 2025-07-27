@@ -6,11 +6,10 @@
     <button @click="changeMessage">点击改变消息</button>
     <!-- 条件渲染 - 根据数据显示/隐藏 -->
     <p v-if="showTip">提示 这是Vue 3的响应式数据 </p>
+
     <!-- 使用自定义组件 - 就像使用HTML标签一样 -->
     <Counter title="我的第一个组件" :initial-value="5" />
-    <!-- 使用多个相同组件 - 组件复用 -->
     <Counter title="另一个计数器" :initial-value="0" />
-    <!-- <Counter title="第三个计数器" :initial-value="-3" /> -->
   </div>
 </template>
 
@@ -23,7 +22,6 @@ const title = ref('Vue 3 响应式数据示例')
 const message = ref('欢迎来到现代前端开发的世界')
 const showTip = ref(false)
 
-// 函数定义 - 类似你之前写的JavaScript函数
 const changeMessage = () => {
   message.value = '消息已改变 - ' + new Date().toLocaleTimeString()
   showTip.value = !showTip.value
