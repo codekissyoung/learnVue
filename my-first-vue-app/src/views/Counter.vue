@@ -20,10 +20,12 @@ import { ref, computed } from 'vue'
 
 const props = defineProps({
   title: {
-    type: String
+    type: String,
+    default: '计数器'
   },
   initialValue: {
-    type: Number
+    type: Number,
+    default: 0
   }
 })
 
