@@ -41,7 +41,7 @@ const router = useRouter()
 
 // 模拟用户数据库
 const userDatabase = {
-  1: { name: '张三', age: 25 },
+  1: { name: '张0006666666666三', age: 25 },
   2: { name: '李四', age: 30 },
   3: { name: '王五', age: 28 }
 }
