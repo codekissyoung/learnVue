@@ -5,7 +5,7 @@
     <div class="user-info">
       <div class="info-card">
         <h2>基本信息</h2>
-        <p><strong>用户ID：</strong>{{ $route.params.id }}</p>
+        <p><strong>用户ID </strong>{{ $route.params.id }}</p>
         <p><strong>姓名：</strong>{{ userData.name }}</p>
         <p><strong>年龄：</strong>{{ userData.age }}</p>
       </div>
