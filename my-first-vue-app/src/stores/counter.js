@@ -1,23 +1,64 @@
 // Counter Store - 计数器状态管理
+// =============================================
+// Pinia 核心概念演示：全局响应式状态管理
+// =============================================
+//
+// Pinia 是 Vue 3 的官方状态管理库，类似于全局的响应式数据容器
+// 解决了组件间数据共享和状态管理的问题
+//
+// 核心优势：
+// ✅ 全局状态共享 - 多个组件可以访问同一份数据
+// ✅ 响应式自动更新 - 数据变化时所有相关组件自动重新渲染
+// ✅ 语法简洁 - 使用熟悉的 Vue 3 Composition API 语法
+// ✅ 支持异步操作 - 可以处理 API 调用等异步逻辑
+//
+// 与普通组件数据的对比：
+// 普通组件数据：只能在该组件内使用，需要通过 props/emit 传递
+// Pinia 数据：全局共享，任何组件都可以直接访问和修改
+// =============================================
+
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 
-// 使用Composition API风格定义store
+// 使用 Composition API 风格定义 store
+// defineStore('store名称', 定义函数)
+// 返回一个函数，调用该函数获取 store 实例
 export const useCounterStore = defineStore('counter', () => {
-  // State (状态) - 使用ref创建响应式数据
-  const count = ref(0)
-  const name = ref('Vue Counter')
+  // =============================================
+  // State (状态) - 存储应用的全局数据
+  // =============================================
+  // 相当于组件中的 ref()，创建响应式数据
+  // 不同的是这些数据可以在所有组件中共享访问
+  // =============================================
+  
+  const count = ref(0)           // 计数值，所有组件共享
+  const name = ref('Vue Counter') // 计数器名称，可自定义
 
-  // Getters (计算属性) - 基于state计算派生数据
-  const doubleCount = computed(() => count.value * 2)
-  const isEven = computed(() => count.value % 2 === 0)
+  // =============================================
+  // Getters (计算属性) - 基于state派生数据
+  // =============================================
+  // 相当于组件中的 computed()，具有缓存特性
+  // 只有当依赖的 state 发生变化时才会重新计算
+  // 提高性能，避免重复计算
+  // =============================================
+  
+  const doubleCount = computed(() => count.value * 2)  // 双倍值
+  const isEven = computed(() => count.value % 2 === 0)  // 判断奇偶
   const countMessage = computed(() => {
+    // 可以组合多个 state 和 getter
     return `${name.value}: ${count.value} (${isEven.value ? '偶数' : '奇数'})`
   })
 
-  // Actions (操作方法) - 修改state的方法
+  // =============================================
+  // Actions (操作方法) - 修改state的业务逻辑
+  // =============================================
+  // 相当于组件中的普通函数，但专门用于修改 state
+  // 可以是同步或异步操作
+  // 集中管理状态修改逻辑，便于维护
+  // =============================================
+  
   function increment() {
-    count.value++
+    count.value++  // 直接修改 state，自动触发响应式更新
   }
 
   function decrement() {
@@ -36,23 +77,35 @@ export const useCounterStore = defineStore('counter', () => {
     name.value = newName
   }
 
-  // 异步action示例
+  // =============================================
+  // 异步 Actions - 支持异步操作
+  // =============================================
+  // Pinia 完美支持异步操作，可以处理 API 调用、定时器等
+  // 组件中可以用 await 调用这些方法
+  // =============================================
+  
   async function incrementAsync() {
-    // 模拟异步操作
+    // 模拟异步操作（如 API 调用）
     await new Promise(resolve => setTimeout(resolve, 1000))
-    count.value++
+    count.value++  // 异步操作完成后修改 state
   }
 
-  // 返回要暴露的state、getters和actions
+  // =============================================
+  // 返回接口 - 暴露给外部使用的内容
+  // =============================================
+  // 只有在这里返回的内容才能在组件中被访问
+  // 可以选择性暴露，隐藏内部实现细节
+  // =============================================
+  
   return {
-    // State
+    // State - 暴露状态数据
     count,
     name,
-    // Getters
+    // Getters - 暴露计算属性
     doubleCount,
     isEven,
     countMessage,
-    // Actions
+    // Actions - 暴露操作方法
     increment,
     decrement,
     incrementBy,
