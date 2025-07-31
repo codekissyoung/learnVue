@@ -19,6 +19,11 @@ const routes = [
     component: () => import('../views/Counter.vue')
   },
   {
+    path: '/global-counter',
+    name: 'GlobalCounter',
+    component: () => import('../views/GlobalCounter.vue')
+  },
+  {
     path: '/user/detail/:id',
     name: 'UserDetail',
     component: () => import('../views/user/detail.vue')

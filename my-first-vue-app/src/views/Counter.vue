@@ -16,7 +16,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
+import { useCounterStore } from '@/stores/counter'
 
 const props = defineProps({
   title: {
@@ -29,22 +30,27 @@ const props = defineProps({
   }
 })
 
-const count = ref(props.initialValue)
+// 使用Pinia store
+const counterStore = useCounterStore()
+
+// 从store获取状态和方法
+const count = computed(() => counterStore.count)
 const status = computed(() => {
-  if (count.value > 10) return '很大了！'
-  if (count.value < 0) return '负数了！'
-  if (count.value === 0) return '归零状态'
+  if (counterStore.count > 10) return '很大了！'
+  if (counterStore.count < 0) return '负数了！'
+  if (counterStore.count === 0) return '归零状态'
   return '正常计数中'
 })
 
+// 使用store的actions
 const increase = () => {
-  count.value++
+  counterStore.increment()
 }
 const decrease = () => {
-  count.value--
+  counterStore.decrement()
 }
 const reset = () => {
-  count.value = props.initialValue
+  counterStore.reset()
 }
 </script>
 
