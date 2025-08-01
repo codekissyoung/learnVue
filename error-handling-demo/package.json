@@ -1,0 +1,6 @@
+{
+  "name": "error-handling-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "ES模块错误处理演示"
+}
