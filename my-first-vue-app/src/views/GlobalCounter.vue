@@ -56,7 +56,7 @@
 // =============================================
 
 import { ref } from 'vue'
-import { useCounterStore } from '@/stores/counter'
+import { useCounterStore } from '@/stores/counter.js'
 
 // =============================================
 // 获取同一个 Store 实例

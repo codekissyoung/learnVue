@@ -28,7 +28,7 @@
 // =============================================
 
 import { computed } from 'vue'
-import { useCounterStore } from '@/stores/counter'
+import { useCounterStore } from '@/stores/counter.js'
 
 // 组件的 props - 普通的组件属性
 const props = defineProps({
