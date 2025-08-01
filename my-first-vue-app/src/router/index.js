@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
+import Home from '@/views/Home.vue'
+import About from '@/views/About.vue'
 
 const routes = [
   {
@@ -16,17 +16,17 @@ const routes = [
   {
     path: '/counter',
     name: 'Counter',
-    component: () => import('../views/Counter.vue')
+    component: () => import('@/views/Counter.vue')
   },
   {
     path: '/global-counter',
     name: 'GlobalCounter',
-    component: () => import('../views/GlobalCounter.vue')
+    component: () => import('@/views/GlobalCounter.vue')
   },
   {
     path: '/user/detail/:id',
     name: 'UserDetail',
-    component: () => import('../views/user/detail.vue')
+    component: () => import('@/views/user/detail.vue')
   }
 ]
 
