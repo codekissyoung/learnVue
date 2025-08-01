@@ -224,6 +224,53 @@ npm run preview      # 预览构建结果
 - 安装方法: `Cmd+Shift+P` → `Extensions: Install from VSIX...`
 - 安装完成后可以在Markdown预览中看到Mermaid流程图
 
+## V2net代理快速诊断 🔧 (2025-08-01)
+
+**一键诊断命令**：
+```bash
+# 快速检查V2net是否正常工作
+ps aux | grep -i v2net && lsof -i :1087 && curl -I --proxy http://127.0.0.1:1087 http://www.google.com
+```
+
+**快速修复流程**：
+1. **检查V2net应用是否启动** - 桌面应用程序状态
+2. **重启V2net** - 大部分问题的解决方案
+3. **确认PAC模式** - 不要用全局代理模式
+
+**快速测试代理**：
+```bash
+# 测试代理连接
+curl -I --proxy http://127.0.0.1:1087 https://www.google.com
+
+# 清除npm/git代理设置（避免冲突）
+npm config delete proxy && npm config delete https-proxy
+git config --global --unset http.proxy && git config --global --unset https.proxy
+```
+
+**常见问题**：
+- V2net进程未运行 → 启动应用
+- 端口未监听 → 重启V2net
+- 特定网站无法访问 → 检查PAC规则
+
+### 经验总结
+**重要发现**：npm连接问题的根本原因是V2net代理服务未正常启动，而非配置问题。
+
+**关键诊断步骤**：
+1. **先检查进程状态**: `ps aux | grep v2net` - 发现进程不存在
+2. **再检查端口监听**: `lsof -i :1087` - 确认端口未监听  
+3. **最后验证连接**: `curl --proxy http://127.0.0.1:1087` - 证实代理不可用
+
+**快速诊断命令组合**：
+```bash
+# 一行命令快速诊断V2net状态
+ps aux | grep -i v2net && lsof -i :1087 && curl -I --proxy http://127.0.0.1:1087 http://www.google.com
+```
+
+**教训总结**：
+- 代理问题优先检查服务本身是否运行，而非配置细节
+- 系统性按层次排查：进程→端口→连接→配置
+- V2net应用重启是解决大部分连接问题的有效方法
+
 ## Development Notes
 - 这是学习项目，代码应该包含清晰的注释说明概念
 - 每个功能实现后应该有对应的学习总结
