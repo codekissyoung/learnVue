@@ -32,6 +32,11 @@ const routes = [
     path: '/reactivity-demo',
     name: 'ReactivityDemo',
     component: () => import('@/views/ReactivityDemo.vue')
+  },
+  {
+    path: '/api-demo',
+    name: 'ApiDemo',
+    component: () => import('@/views/ApiDemo.vue')
   }
 ]
 
