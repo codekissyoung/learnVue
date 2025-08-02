@@ -15,6 +15,7 @@ const title = ref('Vue 3 + Vue Router + Pinia 学习项目')
         <router-link to="/counter" class="nav-item">计数器</router-link>
         <router-link to="/global-counter" class="nav-item">全局计数器</router-link>
         <router-link to="/user/detail/1" class="nav-item">用户详情</router-link>
+        <router-link to="/reactivity-demo" class="nav-item">响应式演示</router-link>
       </nav>
     </header>
     

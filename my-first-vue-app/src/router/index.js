@@ -27,6 +27,11 @@ const routes = [
     path: '/user/detail/:id',
     name: 'UserDetail',
     component: () => import('@/views/user/detail.vue')
+  },
+  {
+    path: '/reactivity-demo',
+    name: 'ReactivityDemo',
+    component: () => import('@/views/ReactivityDemo.vue')
   }
 ]
 
