@@ -5,9 +5,9 @@
     
     <div class="route-info">
       <h2>当前路由信息：</h2>
-      <p><strong>路径：</strong>{{ $route.path }}</p>
-      <p><strong>名称：</strong>{{ $route.name }}</p>
-      <p><strong>完整路径：</strong>{{ $route.fullPath }}</p>
+      <p><strong>路径：</strong>{{ route.path }}</p>
+      <p><strong>名称：</strong>{{ route.name }}</p>
+      <p><strong>完整路径：</strong>{{ route.fullPath }}</p>
     </div>
     
     <div class="navigation">

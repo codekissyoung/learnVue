@@ -5,16 +5,16 @@
     <div class="user-info">
       <div class="info-card">
         <h2>基本信息</h2>
-        <p><strong>用户ID </strong>{{ $route.params.id }}</p>
+        <p><strong>用户ID </strong>{{ route.params.id }}</p>
         <p><strong>姓名：</strong>{{ userData.name }}</p>
         <p><strong>年龄：</strong>{{ userData.age }}</p>
       </div>
       
       <div class="route-info">
         <h3>路由信息</h3>
-        <p><strong>完整路径：</strong>{{ $route.fullPath }}</p>
-        <p><strong>路由参数：</strong>{{ JSON.stringify($route.params) }}</p>
-        <p><strong>查询参数：</strong>{{ JSON.stringify($route.query) }}</p>
+        <p><strong>完整路径：</strong>{{ route.fullPath }}</p>
+        <p><strong>路由参数：</strong>{{ JSON.stringify(route.params) }}</p>
+        <p><strong>查询参数：</strong>{{ JSON.stringify(route.query) }}</p>
       </div>
     </div>
     
