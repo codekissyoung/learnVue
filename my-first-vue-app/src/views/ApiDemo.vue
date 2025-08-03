@@ -211,7 +211,7 @@ axios.interceptors.response.use(
 
 // 检查服务器健康状态
 const checkHealth = async () => {
-  healthLoading.value = true
+
   errorMessage.value = ''
   
   try {

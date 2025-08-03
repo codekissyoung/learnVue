@@ -146,22 +146,38 @@ Vue 3 + Vue Router + Pinia技术栈完全整合，具备现代前端应用开发
 
 ## Technology Stack
 
-### 核心框架
-- **框架**: Vue 3 (使用Composition API)
-- **路由**: Vue Router 4 (官方路由管理器)
-- **状态管理**: Pinia (Vue 3官方推荐状态管理库)
-- **构建工具**: Vite (现代构建工具，比webpack简单)
+### 核心框架 (版本已固定 🔒)
+- **框架**: Vue 3.4.29 (使用Composition API)
+- **路由**: Vue Router 4.5.1 (官方路由管理器)
+- **状态管理**: Pinia 3.0.3 (Vue 3官方推荐状态管理库)
+- **构建工具**: Vite 5.3.1 (现代构建工具，比webpack简单)
 - **包管理器**: npm (统一使用npm，不混用yarn)
+- **HTTP客户端**: Axios 1.11.0 (异步请求库)
 
 ### UI框架选择
-- **桌面端/后台管理**: Element Plus (企业级后台管理系统首选)
+- **桌面端/后台管理**: Element Plus 2.10.5 (企业级后台管理系统首选) 🔒
 - **移动端H5**: Vant 4 (Vue 3移动端开发首选框架) 🆕
 - **学习项目**: 原生Vue 3组件 (专注核心概念学习)
 
-### 代码规范
-- 遵循Vue 3官方推荐规范
-- 使用ES6+现代JavaScript语法
-- 采用Composition API开发模式
+### 代码规范与最佳实践 🎯
+- **Vue 3 Composition API**: 严格使用 `<script setup>` 语法糖
+- **路由**: 使用 `useRouter()` 和 `useRoute()` 组合式API
+- **状态管理**: 使用 `defineStore()` 和组合式语法
+- **Element Plus**: 全局注册，直接使用 `el-*` 组件
+- **ES6+ 现代语法**: Promise/async-await、解构赋值、模板字符串
+- **JavaScript专注策略**: 🚫 **不使用TypeScript** (2025-08-03决策)
+  - 专注JavaScript，避免工具链复杂化
+  - 严格使用 `.js` 和 `.vue` 文件，禁止 `.ts` 扩展名
+  - Vue 3 + JavaScript已足够强大，保持学习专注度
+- **Import规范**: 
+  - 使用 `@/` 路径别名替代相对路径
+  - 本地文件导入包含完整文件后缀
+  - npm包导入保持标准格式
+
+### 技术栈版本锁定策略 🔒
+- **package.json版本固定**: 移除 `^` 符号，锁定具体版本
+- **避免自动升级**: 确保开发环境一致性
+- **学习项目稳定性**: 为Vue学习提供稳定的技术栈环境
 
 ## Development Setup
 当项目初始化后，常用命令将包括：

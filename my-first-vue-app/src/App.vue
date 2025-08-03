@@ -1,14 +1,8 @@
-<script setup>
-import { ref } from 'vue'
-const title = ref('Vue 3 + Vue Router + Pinia 学习项目')
-</script>
-
 <template>
   <div class="app">
     <header>
       <h1>{{ title }}</h1>
       
-      <!-- 导航栏 -->
       <nav class="navbar">
         <router-link to="/" class="nav-item">首页</router-link>
         <router-link to="/about" class="nav-item">关于</router-link>
@@ -24,13 +18,24 @@ const title = ref('Vue 3 + Vue Router + Pinia 学习项目')
     <main>
       <router-view />
     </main>
+
+    <footer>
+      <p>© 2023 Vue 3学习项目</p>
+    </footer>
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+const title = ref('Vue 3 学习项目')
+</script>
 
 <style>
 .app {
   font-family: Arial, sans-serif;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -74,5 +79,20 @@ main {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  flex: 1;
+}
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto;
+  border-top: 1px solid #e9ecef;
+}
+
+footer p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
 }
 </style>
