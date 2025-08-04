@@ -37,6 +37,11 @@ const routes = [
     path: '/api-demo',
     name: 'ApiDemo',
     component: () => import('@/views/ApiDemo.vue')
+  },
+  {
+    path: '/hooks-demo',
+    name: 'HooksDemo',
+    component: () => import('@/views/HooksDemo.vue')
   }
 ]
 

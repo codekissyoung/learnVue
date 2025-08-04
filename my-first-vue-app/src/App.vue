@@ -15,6 +15,7 @@
         <router-link to="/user/detail/1" class="nav-item">用户详情</router-link>
         <router-link to="/reactivity-demo" class="nav-item">响应式演示</router-link>
         <router-link to="/api-demo" class="nav-item">API演示</router-link>
+        <router-link to="/hooks-demo" class="nav-item">Hooks演示</router-link>
       </nav>
     </header>
     
