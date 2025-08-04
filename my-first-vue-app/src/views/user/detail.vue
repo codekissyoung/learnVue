@@ -19,7 +19,7 @@
     </div>
     
     <div class="demo-links">
-      <h3>试试其他用户：</h3>
+      <h3>快速切换：</h3>
       <router-link to="/user/detail/1" class="demo-link">用户1</router-link>
       <router-link to="/user/detail/2" class="demo-link">用户2</router-link>
       <router-link to="/user/detail/3?tab=profile" class="demo-link">用户3(带查询参数)</router-link>
@@ -27,7 +27,7 @@
     
     <div class="navigation">
       <button @click="goBack" class="btn">返回上一页</button>
-      <router-link to="/" class="btn">回到首页</router-link>
+      <router-link to="/user" class="btn">用户列表</router-link>
     </div>
   </div>
 </template>
@@ -39,11 +39,13 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
-// 模拟用户数据库
+// 模拟用户数据库 - 与UserLayout保持一致
 const userDatabase = {
-  1: { name: '张0006666666666三', age: 25 },
+  1: { name: '张三', age: 25 },
   2: { name: '李四', age: 30 },
-  3: { name: '王五', age: 28 }
+  3: { name: '王五', age: 28 },
+  4: { name: '赵六', age: 35 },
+  5: { name: '钱七', age: 22 }
 }
 
 // 根据路由参数获取用户数据

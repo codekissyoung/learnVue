@@ -24,9 +24,21 @@ const routes = [
     component: () => import('@/views/GlobalCounter.vue')
   },
   {
-    path: '/user/detail/:id',
-    name: 'UserDetail',
-    component: () => import('@/views/user/detail.vue')
+    path: '/user',
+    name: 'User',
+    component: () => import('@/views/user/UserLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'UserList',
+        component: () => import('@/views/user/UserList.vue')
+      },
+      {
+        path: 'detail/:id',
+        name: 'UserDetail',
+        component: () => import('@/views/user/detail.vue')
+      }
+    ]
   },
   {
     path: '/reactivity-demo',
