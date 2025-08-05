@@ -8,8 +8,4 @@ import router from './router/index.js'    // 导入路由配置
 
 const app = createApp(App)       // 创建Vue实例
 const pinia = createPinia()      // 创建Pinia实例
-
-app.use(router)                  // 使用路由
-app.use(pinia)                   // 使用Pinia状态管理
-app.use(ElementPlus)             // 使用Element Plus
-app.mount('#app')                // 挂载到#app元素上
+app.use(router).use(pinia).use(ElementPlus).app.mount('#app')
