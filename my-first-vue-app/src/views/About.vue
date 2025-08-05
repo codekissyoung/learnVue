@@ -25,22 +25,14 @@
 
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
-
-// useRouter: 获取路由器实例，用于编程式导航
 const router = useRouter()
-// useRoute: 获取当前路由信息
 const route = useRoute()
-
 function goHome() {
-  // 编程式导航 - 通过代码跳转路由
   router.push('/')
 }
-
 function goBack() {
-  // 返回上一页
   router.back()
 }
-
 console.log('About页面组件已加载，当前路由：', route.path)
 </script>
 

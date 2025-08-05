@@ -32,22 +32,14 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-
 const title = ref('Vue 3 学习项目')
 const isScrolled = ref(false)
-
-// 滚动监听函数
 const handleScroll = () => {
-  // 当滚动距离超过50px时隐藏title
-  isScrolled.value = window.scrollY > 50
+  isScrolled.value = window.scrollY > 50   // 当滚动距离超过50px时隐藏title
 }
-
-// 组件挂载时添加滚动监听
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
-
-// 组件卸载时移除滚动监听
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
