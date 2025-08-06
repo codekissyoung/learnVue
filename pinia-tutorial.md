@@ -104,7 +104,6 @@ export const useCounterStore = defineStore('counter', () => {
     <h3>计数: {{ counterStore.count }}</h3>
     <p>双倍: {{ counterStore.doubleCount }}</p>
     <p>是否偶数: {{ counterStore.isEven ? '是' : '否' }}</p>
-    
     <button @click="counterStore.increment">+1</button>
     <button @click="counterStore.decrement">-1</button>
     <button @click="counterStore.reset">重置</button>
@@ -242,25 +241,6 @@ export const useCartStore = defineStore('cart', () => {
     // 添加商品到购物车
   }
 })
-```
-
-## 与你已学技术的关系
-
-### 类比Go语言
-```go
-// Go结构体 + 方法
-type CounterStore struct {
-    Count int
-    Name  string
-}
-
-func (c *CounterStore) Increment() {
-    c.Count++
-}
-
-func (c *CounterStore) GetDoubleCount() int {
-    return c.Count * 2
-}
 ```
 
 ```javascript
