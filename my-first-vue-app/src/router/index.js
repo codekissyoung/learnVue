@@ -52,6 +52,11 @@ const routes = [
     path: '/hooks-demo',
     name: 'HooksDemo',
     component: () => import('@/views/HooksDemo.vue')
+  },
+  {
+    path: '/modern-css-demo',
+    name: 'ModernCssDemo',
+    component: () => import('@/views/ModernCssDemo.vue')
   }
 ]
 

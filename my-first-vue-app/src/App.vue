@@ -16,6 +16,7 @@
         <router-link to="/reactivity-demo" class="nav-item">响应式演示</router-link>
         <router-link to="/api-demo" class="nav-item">API演示</router-link>
         <router-link to="/hooks-demo" class="nav-item">Hooks演示</router-link>
+        <router-link to="/modern-css-demo" class="nav-item">现代CSS</router-link>
       </nav>
     </header>
     
