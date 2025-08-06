@@ -1,40 +1,5 @@
 # Element Plus 安装配置指南
 
-## 🚀 快速安装步骤
-
-### 方法1: 使用淘宝镜像（推荐）
-
-```bash
-# 进入Vue项目目录
-cd my-first-vue-app
-
-# 设置淘宝镜像源
-npm config set registry https://registry.npmmirror.com/
-
-# 安装Element Plus
-npm install element-plus
-
-# 安装图标库
-npm install @element-plus/icons-vue
-
-# 安装完成后可以还原npm源（可选）
-npm config set registry https://registry.npmjs.org/
-```
-
-### 方法2: 使用yarn（如果有的话）
-
-```bash
-yarn add element-plus @element-plus/icons-vue
-```
-
-### 方法3: 使用CDN（快速测试）
-
-```html
-<!-- 在index.html中添加 -->
-<link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css" />
-<script src="https://unpkg.com/element-plus/dist/index.full.js"></script>
-```
-
 ## 📋 配置步骤
 
 ### 1. 修改main.js
@@ -45,27 +10,17 @@ import { createApp } from 'vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-
 import App from './App.vue'
 import router from './router/index.js'
 import { createPinia } from 'pinia'
 
 const app = createApp(App)
-
-// 使用Pinia
 app.use(createPinia())
-
-// 使用Vue Router  
 app.use(router)
-
-// 使用Element Plus
 app.use(ElementPlus)
-
-// 注册所有图标组件
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
-
 app.mount('#app')
 ```
 

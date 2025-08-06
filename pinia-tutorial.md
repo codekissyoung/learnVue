@@ -16,25 +16,6 @@
 任何组件 ↔ Pinia Store ↔ 任何组件 (直接访问共享状态)
 ```
 
-### 与传统组件状态对比
-
-**传统组件状态**：
-```javascript
-// 每个组件都有自己独立的状态
-export default {
-  data() {
-    return { count: 0 }  // 只有这个组件能访问
-  }
-}
-```
-
-**Pinia全局状态**：
-```javascript
-// 所有组件都可以访问同一个状态
-const counterStore = useCounterStore()
-console.log(counterStore.count)  // 任何组件都能访问
-```
-
 ## Pinia核心概念
 
 ### 1. Store（仓库）
